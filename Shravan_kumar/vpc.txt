@@ -1,0 +1,63 @@
+Custom IAM Policy?
+VPC Peering
+How to make a VPC connection from one aws account to ANother AWS account?
+
+I have an EC2 instance in one of my AWS account how to migrate that into different AWS account?
+
+Lets say i have a DB server on one of my instance and none of should it access and Only for Patches and any upgradation we should use how we can do it?
+
+
+Lets Say there is a Requirement from my client that Autoscaling is needed what u will ask to him?
+
+
+How to upgrade an EC2 instance and how u will do it and what are the types?
+
+Lets say i have data in s3 bucket i should move it into s3 galcier after 30 days how u will do it?
+
+
+How to set billing alarm in AWS account?
+
+Lets say there are Multiple AWS account for different users how u manage it??
+
+
+
+
+VPC:
+
+Generally VPC is a Virtual Private cloud which basically Isolate our resources like ec2 instances from other AWS Services and as well as Outer world.
+
+By defaultly when we create any EC2 instance a default VPC created with Public Subnet with Some CIDR range.
+
+Based on VPC CIDR range only the Subnets inside will underlying on that.
+
+In Region we have different multiple AZ such as us-east 1,us-east-1a,us-east-1c ina region we have VPC and in different AZ's 
+
+With two types of Subnets like Public and private Subnets if we want to expose our resources to thw outer world we should create a Internet Gateway.
+
+The Benefits of a VPC are:
+1.Isolate the resources from the outer world.
+2.The Subnets inside our VPC can communicate without any issues.
+3.We Can safely expose our application with set of limitations which we can apply on it.
+4.We can create the Single or dedicated tenants inside the VPC and create multiple network layers on top of VPC and Can create ACL's on the resorces located in VPC.
+5.We can create or control the Inbound and outbound requests for our resources in the VPC.
+6.We can create a SG limied to VPC.
+7.We can create a Static IP for our VPC.
+
+
+
+
+
+Generally VPC components are:
+Internet gateway if our resources in the Subnet want to communicate with Internet and the Public IP address of the Subnet is asscoiated with Internet gateway that itself attached with th Internet.
+We have NAT gateway which is Network Address Translator which Make Our resources in Private Subnet to communicate with the internet.
+Which basically Takes the Private IP to the NAT that itself attach to the internet.
+
+ VPC Peering is one thing if One of MY VPC in one region wants to Communicate with VPC on other region this is helpful.
+
+WHen ever any VPC communicates to outer world or in case of any scenariothrough the route table.
+Because we make the through it route table.
+VPC endpoints are useful if Our VPC wants to communicate with other AWS on a Private Line not through means of internet,
+DNS records are resolving an IP address to an identity.
+
+EGress Only IG makes outbound requests based on IPv6 only.;
+
